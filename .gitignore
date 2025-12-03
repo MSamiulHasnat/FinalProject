@@ -1,0 +1,16 @@
+# Visual Studio specific
+.vs/
+*.user
+*.suo
+*.opensdf
+*.sdf
+
+# Build results
+x64/
+Debug/
+Release/
+*.obj
+*.pdb
+*.exe
+*.dll
+*.lib
