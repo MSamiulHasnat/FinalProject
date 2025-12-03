@@ -1,0 +1,201 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\Menu.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\Menu.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\Level.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\StaticBackground.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\StaticBackground.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\Level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\StaticBackground.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\StaticBackground.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4083F2EF-AB19-4753-BE45-6821F0E8A4D8}|FinalProject\\FinalProject.vcxproj|solutionrelative:FinalProject\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Player.cpp",
+              "RelativeDocumentMoniker": "FinalProject\\src\\Player.cpp",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Player.cpp",
+              "RelativeToolTip": "FinalProject\\src\\Player.cpp",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-26T16:46:06.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Player.h",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Player.h",
+              "RelativeDocumentMoniker": "FinalProject\\src\\Player.h",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Player.h",
+              "RelativeToolTip": "FinalProject\\src\\Player.h",
+              "ViewState": "AgIAAFAAAAAACC0CAngKwGgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-26T16:46:06.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Level.cpp",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Level.cpp",
+              "RelativeDocumentMoniker": "FinalProject\\src\\Level.cpp",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Level.cpp",
+              "RelativeToolTip": "FinalProject\\src\\Level.cpp",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-26T16:46:06.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Menu.cpp",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Menu.cpp",
+              "RelativeDocumentMoniker": "FinalProject\\src\\Menu.cpp",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Menu.cpp",
+              "RelativeToolTip": "FinalProject\\src\\Menu.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-26T16:46:06.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Game.cpp",
+              "RelativeDocumentMoniker": "FinalProject\\src\\Game.cpp",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Game.cpp",
+              "RelativeToolTip": "FinalProject\\src\\Game.cpp",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAD0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-26T16:46:06.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Game.h",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Game.h",
+              "RelativeDocumentMoniker": "FinalProject\\src\\Game.h",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Game.h",
+              "RelativeToolTip": "FinalProject\\src\\Game.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-26T16:46:06.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Level.h",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Level.h",
+              "RelativeDocumentMoniker": "FinalProject\\src\\Level.h",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Level.h",
+              "RelativeToolTip": "FinalProject\\src\\Level.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-26T16:46:06.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StaticBackground.cpp",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\StaticBackground.cpp",
+              "RelativeDocumentMoniker": "FinalProject\\src\\StaticBackground.cpp",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\StaticBackground.cpp",
+              "RelativeToolTip": "FinalProject\\src\\StaticBackground.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-26T16:46:06.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StaticBackground.h",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\StaticBackground.h",
+              "RelativeDocumentMoniker": "FinalProject\\src\\StaticBackground.h",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\StaticBackground.h",
+              "RelativeToolTip": "FinalProject\\src\\StaticBackground.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-26T16:46:06.567Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Menu.h",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Menu.h",
+              "RelativeDocumentMoniker": "FinalProject\\src\\Menu.h",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\Menu.h",
+              "RelativeToolTip": "FinalProject\\src\\Menu.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-26T16:46:06.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "main.cpp",
+              "DocumentMoniker": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\main.cpp",
+              "RelativeDocumentMoniker": "FinalProject\\src\\main.cpp",
+              "ToolTip": "F:\\DevelopmentTools\\VisualStudioCommunity\\Projects\\FinalProject\\FinalProject\\src\\main.cpp",
+              "RelativeToolTip": "FinalProject\\src\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-26T16:46:06.568Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
