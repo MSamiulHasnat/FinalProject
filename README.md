@@ -3,6 +3,9 @@
 ## Overview
 This project is a 2D platformer game developed in C++ using the SFML (Simple and Fast Multimedia Library). It features a robust game engine with a state machine-based player controller, level management, and a camera system. The game is designed with Object-Oriented Programming (OOP) principles, ensuring modularity and maintainability.
 
+### Gameplay Demo
+[![Gameplay Demo](http://img.youtube.com/vi/GqKTSETgcbw/0.jpg)](https://youtu.be/GqKTSETgcbw)
+
 ## Features
 - **Dynamic Player Controller**: A complex state machine handling various actions such as Idle, Walk, Run, Jump, Fall, Slide, Roll, and multiple Attack patterns.
 - **Physics Engine**: Custom implementation of gravity, velocity, and collision detection (AABB) for precise platforming mechanics.
