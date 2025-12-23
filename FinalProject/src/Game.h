@@ -3,6 +3,10 @@
 #include "Menu.h"
 #include "Player.h"
 #include "StaticBackground.h"
+#include "Level1Enemy1.h"
+#include <vector>
+
+using namespace std;
 
 enum GameState {
     STATE_MENU,
@@ -22,18 +26,25 @@ private:
     void render();
 
     sf::RenderWindow mWindow;
-    sf::Vector2f mCameraPosition; // Our camera's (X,Y)
-    sf::RectangleShape mGoalBox;  // The green box
+    sf::Vector2f mCameraPosition;
 
     bool mIsRunning;
     GameState mState;
     Menu* mMenu;
-    
-    // CORRECT PLACEMENT: Inside the class, under private
-    Player* mPlayer; 
+
+    Player* mPlayer;
     StaticBackground* mBackground;
 
-    float mLevelWidth; // Total width of the level (3x background)
+    float mLevelWidth;
     sf::Texture mPlatformTexture;
     vector<sf::Sprite> mPlatforms;
+
+    vector<Enemy*> mEnemies;
+
+    sf::Font mFont;
+    sf::Text mTimerText;
+    sf::Text mScoreText;
+
+    float mLevelTimer; // Counts down from 60
+    int mScore;        // Starts at 0
 };

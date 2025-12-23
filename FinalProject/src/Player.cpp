@@ -12,7 +12,7 @@ bool loadTexture(sf::Texture& texture, const string& filename) {
     }
     string path2 = "../assets/player/Player1/" + filename;
     if (texture.loadFromFile(path2)) {
-        cout << "Loaded: " << path2 << endl; // <-- Fixed typo here
+        cout << "Loaded: " << path2 << endl;
         return true;
     }
     string path3 = "C:/Users/Samiul/source/repos/FinalProject/FinalProject/assets/player/Player1/" + filename;
