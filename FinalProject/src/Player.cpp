@@ -129,10 +129,32 @@ void Player::sliceSpriteSheet(const sf::Texture& texture, int frameWidth, int fr
 }
 
 void Player::handlePlayerInput(sf::Time deltaTime) {
-    // (This function is unchanged from your version)
-    // States that take priority and block other input
+
+    // =========================================================
+    // 1. ATTACK INPUTS (Z, X, C) - CRITICAL FIX
+    // =========================================================
+    // We check these FIRST. If pressed, they trigger the attack and exit immediately.
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+        attack1();
+        return; // Return so we don't accidentally overwrite the state with "Walk" below
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
+        attack2();
+        return;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::C)) {
+        attack3();
+        return;
+    }
+
+    // =========================================================
+    // 2. BLOCKING STATES (Attacking, Rolling)
+    // =========================================================
+    // If we are currently attacking or rolling, we block all movement input.
     if (mState == PlayerState::ATTACK || mState == PlayerState::ATTACK2 || mState == PlayerState::ATTACK3 ||
         mState == PlayerState::WALK_ROLL || mState == PlayerState::RUN_ROLL) {
+
+        // Polish: Allow walk timer to accumulate even during attack so you can run immediately after
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left) ||
             sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
             mWalkHoldTimer += deltaTime.asSeconds();
@@ -140,19 +162,27 @@ void Player::handlePlayerInput(sf::Time deltaTime) {
         else {
             mWalkHoldTimer = 0.0f;
         }
+
+        // Apply friction
         if (mState == PlayerState::ATTACK || mState == PlayerState::ATTACK2 || mState == PlayerState::ATTACK3) {
-            mVelocity.x *= 0.99f; // Tiny friction
+            mVelocity.x *= 0.99f;
         }
-        return; // Block other input
+        return; // STOP HERE. Do not process movement.
     }
-    // --- 1. JUMP INPUT ---
+
+    // =========================================================
+    // 3. JUMP INPUT
+    // =========================================================
     if (mIsOnGround && (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) || sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))) {
         mVelocity.y = mJumpSpeed;
         mIsOnGround = false;
         mState = PlayerState::JUMP;
         mCurrentFrame = 0;
     }
-    // --- 2. ROLL INPUT ---
+
+    // =========================================================
+    // 4. ROLL INPUT
+    // =========================================================
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::R) && mIsOnGround) {
         if (mState == PlayerState::RUN) {
             mState = PlayerState::RUN_ROLL;
@@ -165,10 +195,14 @@ void Player::handlePlayerInput(sf::Time deltaTime) {
             return;
         }
     }
-    // --- 3. HORIZONTAL & SLIDE INPUT ---
+
+    // =========================================================
+    // 5. MOVEMENT & SLIDE INPUT
+    // =========================================================
     bool left = sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left);
     bool right = sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right);
     bool down = sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down);
+
     if (mIsOnGround) {
         if (mState == PlayerState::SLIDE) {
             if (!down || !(left || right)) {
@@ -200,6 +234,7 @@ void Player::handlePlayerInput(sf::Time deltaTime) {
             mWalkHoldTimer = 0.0f;
             mState = PlayerState::IDLE;
         }
+
         if (!down) {
             mCanSlide = true;
         }
@@ -210,9 +245,12 @@ void Player::handlePlayerInput(sf::Time deltaTime) {
         if (right) mDirection = Direction::RIGHT;
         mCanSlide = true;
     }
-    // --- 4. SET VELOCITY BASED ON STATE ---
+
+    // =========================================================
+    // 6. APPLY VELOCITY
+    // =========================================================
     if (mState == PlayerState::SLIDE) {
-        mVelocity.x *= 0.99f; // Your 0.99 friction
+        mVelocity.x *= 0.99f;
     }
     else if (left) {
         if (mState == PlayerState::RUN || mState == PlayerState::JUMP || mState == PlayerState::FALL)
