@@ -15,20 +15,22 @@ public:
     void update(sf::Time deltaTime, sf::Vector2f playerPos, const std::vector<sf::Sprite>& platforms) override;
 
 private:
-    // Textures & Frames
-    sf::Texture mAttackRightSheet, mAttackLeftSheet;
-    sf::Texture mHurtRightSheet, mHurtLeftSheet;
-    sf::Texture mIdleRightSheet, mIdleLeftSheet;
-    sf::Texture mJumpRightSheet, mJumpLeftSheet;
-    sf::Texture mRunRightSheet, mRunLeftSheet;
-    sf::Texture mWalkRightSheet, mWalkLeftSheet;
+    // Textures & Frames (STATIC for optimization)
+    static sf::Texture sAttackRightSheet, sAttackLeftSheet;
+    static sf::Texture sHurtRightSheet, sHurtLeftSheet;
+    static sf::Texture sIdleRightSheet, sIdleLeftSheet;
+    static sf::Texture sJumpRightSheet, sJumpLeftSheet;
+    static sf::Texture sRunRightSheet, sRunLeftSheet;
+    static sf::Texture sWalkRightSheet, sWalkLeftSheet;
 
-    vector<sf::IntRect> mAttackRightFrames, mAttackLeftFrames;
-    vector<sf::IntRect> mHurtRightFrames, mHurtLeftFrames;
-    vector<sf::IntRect> mIdleRightFrames, mIdleLeftFrames;
-    vector<sf::IntRect> mJumpRightFrames, mJumpLeftFrames;
-    vector<sf::IntRect> mRunRightFrames, mRunLeftFrames;
-    vector<sf::IntRect> mWalkRightFrames, mWalkLeftFrames;
+    static vector<sf::IntRect> sAttackRightFrames, sAttackLeftFrames;
+    static vector<sf::IntRect> sHurtRightFrames, sHurtLeftFrames;
+    static vector<sf::IntRect> sIdleRightFrames, sIdleLeftFrames;
+    static vector<sf::IntRect> sJumpRightFrames, sJumpLeftFrames;
+    static vector<sf::IntRect> sRunRightFrames, sRunLeftFrames;
+    static vector<sf::IntRect> sWalkRightFrames, sWalkLeftFrames;
+
+    static bool sTexturesLoaded;
 
     void loadAndSlice(sf::Texture& texture, string filename, vector<sf::IntRect>& frameVector, int frames);
     void updateAnimation(sf::Time deltaTime);

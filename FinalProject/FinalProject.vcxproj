@@ -138,7 +138,9 @@
     <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Level.cpp" />
+    <ClCompile Include="src\Level1Boss.cpp" />
     <ClCompile Include="src\Level1Enemy1.cpp" />
+    <ClCompile Include="src\Level2Enemy1.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\Player.cpp" />
@@ -148,7 +150,9 @@
     <ClInclude Include="src\Enemy.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Level.h" />
+    <ClInclude Include="src\Level1Boss.h" />
     <ClInclude Include="src\Level1Enemy1.h" />
+    <ClInclude Include="src\Level2Enemy1.h" />
     <ClInclude Include="src\Menu.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\StaticBackground.h" />

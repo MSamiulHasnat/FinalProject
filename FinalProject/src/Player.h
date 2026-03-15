@@ -17,7 +17,13 @@ enum class PlayerState {
     RUN_ROLL,
     ATTACK,
     ATTACK2,
-    ATTACK3
+    ATTACK3,
+    SITTING_DOWN,
+    SITTING_IDLE,
+    STANDING_UP,
+    DEAD,
+    HURT,
+    PROTECTION
 };
 
 // The direction the player is facing
@@ -28,7 +34,7 @@ enum class Direction {
 
 class Player {
 public:
-    Player();
+    Player(int characterId = 1);
     ~Player();
 
     void handlePlayerInput(sf::Time deltaTime);
@@ -46,11 +52,28 @@ public:
     void attack2();
     void attack3();
 
+    // Health System
+    void takeDamage(int damage);
+    int getHealth() const { return mHealth; }
+    int getMaxHealth() const { return mMaxHealth; }
+    bool isDead() const { return mHealth <= 0; }
+    
+    // Attack Hitbox
+    sf::FloatRect getAttackHitbox() const;
+    bool isAttacking() const;
+    int getAttackType() const; // 1=Z, 2=X, 3=C
+
     sf::Vector2f getVelocity() const { return mVelocity; }
+    
+    // Standardize World Position to always return Top-Left coordinate
     sf::Vector2f getWorldPosition() const { return mWorldPosition; }
 
     void setWorldPosition(sf::Vector2f pos) { mWorldPosition = pos; }
-    float getVisualWidth() const { return 96.0f * 4.0f; }
+    
+    // Player 1: 96 * 4 = 384 width. Player 2: 128 * 2 = 256 width.
+    float getVisualWidth() const { return (mCharacterId == 2) ? 256.0f : 384.0f; }
+    // Player 1: 64 * 4 = 256 height. Player 2: 128 * 2 = 256 height.
+    float getVisualHeight() const { return 256.0f; }
 
 private:
     sf::Sprite mSprite;
@@ -76,6 +99,9 @@ private:
     sf::Texture mRunRollSheetRight, mRunRollSheetLeft;
     sf::Texture mAttack2SheetRight, mAttack2SheetLeft;
     sf::Texture mAttack3SheetRight, mAttack3SheetLeft;
+    sf::Texture mSittingDownSheetRight, mSittingDownSheetLeft;
+    sf::Texture mSittingIdleSheetRight, mSittingIdleSheetLeft;
+    sf::Texture mStandingUpSheetRight, mStandingUpSheetLeft;
 
     // --- Frame Vectors ---
     vector<sf::IntRect> mIdleFramesRight, mIdleFramesLeft;
@@ -89,14 +115,33 @@ private:
     vector<sf::IntRect> mRunRollFramesRight, mRunRollFramesLeft;
     vector<sf::IntRect> mAttack2FramesRight, mAttack2FramesLeft;
     vector<sf::IntRect> mAttack3FramesRight, mAttack3FramesLeft;
+    vector<sf::IntRect> mSittingDownFramesRight, mSittingDownFramesLeft;
+    vector<sf::IntRect> mSittingIdleFramesRight, mSittingIdleFramesLeft;
+    vector<sf::IntRect> mStandingUpFramesRight, mStandingUpFramesLeft;
+
+    // Player 2 Specific Frames
+    sf::Texture mDeadSheetRight, mDeadSheetLeft;
+    sf::Texture mHurtSheetRight, mHurtSheetLeft;
+    sf::Texture mProtectionSheetRight, mProtectionSheetLeft;
+    
+    vector<sf::IntRect> mDeadFramesRight, mDeadFramesLeft;
+    vector<sf::IntRect> mHurtFramesRight, mHurtFramesLeft;
+    vector<sf::IntRect> mProtectionFramesRight, mProtectionFramesLeft;
 
     // --- Animation & Timers ---
     int mCurrentFrame;
     float mFrameTime;
+    
+    // Health
+    int mHealth;
+    int mMaxHealth;
+    float mInvulnerabilityTimer;
+    float mHealingTimer; // New: For sitting regeneration
     float mElapsedTime;
     float mWalkHoldTimer;
     const float mTimeToRun = 1.5f;
     bool mCanSlide;
+    int mCharacterId;
 
     // Helper function
     void sliceSpriteSheet(const sf::Texture& texture, int frameWidth, int frameHeight, int frameCount, vector<sf::IntRect>& frames, bool isReversed);

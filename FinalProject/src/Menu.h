@@ -1,24 +1,33 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <vector>
+#include <string>
+#include <functional>
+
+struct Button {
+    sf::RectangleShape shape;
+    sf::Text text;
+    std::function<void()> onClick;
+    bool isHovered = false;
+};
 
 class Menu {
 public:
-    // Constructor: Takes window dimensions to center text
     Menu(float width, float height);
     ~Menu();
 
-    // Draws the text to the provided window
     void render(sf::RenderWindow& window);
-
-    // Checks key presses and returns an action code
-    // 0 = No Action, 1 = Start Game, -1 = Exit Game
-    int handleInput(sf::Keyboard::Key key);
+    
+    // Returns action code: 0=None, 1=Start(L1), 2=L2, 3=L3, -1=Quit
+    int handleInput(sf::RenderWindow& window);
 
 private:
     sf::Font mFont;
     sf::Text mTitleText;
-    sf::Text mInstructionText;
+    std::vector<Button> mButtons;
+    sf::Texture mBackgroundTexture; // New background texture
+    sf::Sprite mBackgroundSprite;   // New background sprite
 
-    // Helper to setup text properties to keep code clean
-    void initText(sf::Text& text, int size, sf::Color color, std::string content, float x, float y);
+    void initButton(const std::string& label, float x, float y, float width, float height, std::function<void()> callback);
+    void drawRoundedButton(sf::RenderWindow& window, Button& btn);
 };

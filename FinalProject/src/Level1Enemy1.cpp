@@ -5,10 +5,29 @@
 using namespace std;
 
 // =========================================================
+// STATIC MEMBER DEFINITIONS
+// =========================================================
+sf::Texture Level1Enemy1::sAttackRightSheet, Level1Enemy1::sAttackLeftSheet;
+sf::Texture Level1Enemy1::sHurtRightSheet, Level1Enemy1::sHurtLeftSheet;
+sf::Texture Level1Enemy1::sIdleRightSheet, Level1Enemy1::sIdleLeftSheet;
+sf::Texture Level1Enemy1::sJumpRightSheet, Level1Enemy1::sJumpLeftSheet;
+sf::Texture Level1Enemy1::sRunRightSheet, Level1Enemy1::sRunLeftSheet;
+sf::Texture Level1Enemy1::sWalkRightSheet, Level1Enemy1::sWalkLeftSheet;
+
+vector<sf::IntRect> Level1Enemy1::sAttackRightFrames, Level1Enemy1::sAttackLeftFrames;
+vector<sf::IntRect> Level1Enemy1::sHurtRightFrames, Level1Enemy1::sHurtLeftFrames;
+vector<sf::IntRect> Level1Enemy1::sIdleRightFrames, Level1Enemy1::sIdleLeftFrames;
+vector<sf::IntRect> Level1Enemy1::sJumpRightFrames, Level1Enemy1::sJumpLeftFrames;
+vector<sf::IntRect> Level1Enemy1::sRunRightFrames, Level1Enemy1::sRunLeftFrames;
+vector<sf::IntRect> Level1Enemy1::sWalkRightFrames, Level1Enemy1::sWalkLeftFrames;
+
+bool Level1Enemy1::sTexturesLoaded = false;
+
+// =========================================================
 // CONSTRUCTOR
 // =========================================================
 Level1Enemy1::Level1Enemy1(float startX, float startY) {
-    cout << "--- SPAWNING INTELLIGENT ENEMY AT (" << startX << ", " << startY << ") ---" << endl;
+    // cout << "--- SPAWNING INTELLIGENT ENEMY AT (" << startX << ", " << startY << ") ---" << endl;
 
     mWorldPosition = sf::Vector2f(startX, startY);
     mHitboxWidth = 80.0f;
@@ -28,26 +47,34 @@ Level1Enemy1::Level1Enemy1(float startX, float startY) {
     mJumpCooldown = 0.0f;
     mAttackCooldown = 0.0f;
     mSearchTimer = 0.0f;
+
+    // Health
+    mHealth = 50;
+    mMaxHealth = 50;
     mPatrolPauseTimer = 0.0f;
     mLastKnownPlayerPos = mWorldPosition;
 
-    // Load Textures
-    loadAndSlice(mIdleRightSheet, "idleright.png", mIdleRightFrames, 8);
-    loadAndSlice(mIdleLeftSheet, "idleleft.png", mIdleLeftFrames, 8);
-    loadAndSlice(mWalkRightSheet, "walkright.png", mWalkRightFrames, 12);
-    loadAndSlice(mWalkLeftSheet, "walkleft.png", mWalkLeftFrames, 12);
-    loadAndSlice(mRunRightSheet, "runright.png", mRunRightFrames, 8);
-    loadAndSlice(mRunLeftSheet, "runleft.png", mRunLeftFrames, 8);
-    loadAndSlice(mJumpRightSheet, "jumpright.png", mJumpRightFrames, 3);
-    loadAndSlice(mJumpLeftSheet, "jumpleft.png", mJumpLeftFrames, 3);
-    loadAndSlice(mAttackRightSheet, "attack1right.png", mAttackRightFrames, 8);
-    loadAndSlice(mAttackLeftSheet, "attack1left.png", mAttackLeftFrames, 8);
-    loadAndSlice(mHurtRightSheet, "hurtright.png", mHurtRightFrames, 4);
-    loadAndSlice(mHurtLeftSheet, "hurtleft.png", mHurtLeftFrames, 4);
+    // Load Textures (ONLY ONCE)
+    if (!sTexturesLoaded) {
+        loadAndSlice(sIdleRightSheet, "idleright.png", sIdleRightFrames, 8);
+        loadAndSlice(sIdleLeftSheet, "idleleft.png", sIdleLeftFrames, 8);
+        loadAndSlice(sWalkRightSheet, "walkright.png", sWalkRightFrames, 12);
+        loadAndSlice(sWalkLeftSheet, "walkleft.png", sWalkLeftFrames, 12);
+        loadAndSlice(sRunRightSheet, "runright.png", sRunRightFrames, 8);
+        loadAndSlice(sRunLeftSheet, "runleft.png", sRunLeftFrames, 8);
+        loadAndSlice(sJumpRightSheet, "jumpright.png", sJumpRightFrames, 3);
+        loadAndSlice(sJumpLeftSheet, "jumpleft.png", sJumpLeftFrames, 3);
+        loadAndSlice(sAttackRightSheet, "attack1right.png", sAttackRightFrames, 8);
+        loadAndSlice(sAttackLeftSheet, "attack1left.png", sAttackLeftFrames, 8);
+        loadAndSlice(sHurtRightSheet, "hurtright.png", sHurtRightFrames, 4);
+        loadAndSlice(sHurtLeftSheet, "hurtleft.png", sHurtLeftFrames, 4);
+        
+        sTexturesLoaded = true;
+    }
 
-    if (!mIdleRightFrames.empty()) {
-        mSprite.setTexture(mIdleRightSheet);
-        mSprite.setTextureRect(mIdleRightFrames[0]);
+    if (!sIdleRightFrames.empty()) {
+        mSprite.setTexture(sIdleRightSheet);
+        mSprite.setTextureRect(sIdleRightFrames[0]);
     }
     mSprite.setScale(mSpriteScale, mSpriteScale);
 
@@ -241,46 +268,46 @@ void Level1Enemy1::updateAnimation(sf::Time deltaTime) {
         mElapsedTime = 0.0f;
         mCurrentFrame++;
 
-        vector<sf::IntRect>* currentAnimFrames = &mIdleRightFrames;
-        sf::Texture* currentTexture = &mIdleRightSheet;
+        vector<sf::IntRect>* currentAnimFrames = &sIdleRightFrames;
+        sf::Texture* currentTexture = &sIdleRightSheet;
 
         switch (mState) {
         case EnemyState::PATROL:
             if (mVelocity.x == 0) {
-                if (mIsFacingRight) { currentAnimFrames = &mIdleRightFrames; currentTexture = &mIdleRightSheet; }
-                else { currentAnimFrames = &mIdleLeftFrames; currentTexture = &mIdleLeftSheet; }
+                if (mIsFacingRight) { currentAnimFrames = &sIdleRightFrames; currentTexture = &sIdleRightSheet; }
+                else { currentAnimFrames = &sIdleLeftFrames; currentTexture = &sIdleLeftSheet; }
             }
             else {
-                if (mIsFacingRight) { currentAnimFrames = &mWalkRightFrames; currentTexture = &mWalkRightSheet; }
-                else { currentAnimFrames = &mWalkLeftFrames; currentTexture = &mWalkLeftSheet; }
+                if (mIsFacingRight) { currentAnimFrames = &sWalkRightFrames; currentTexture = &sWalkRightSheet; }
+                else { currentAnimFrames = &sWalkLeftFrames; currentTexture = &sWalkLeftSheet; }
             }
             break;
 
         case EnemyState::CHASE:
         case EnemyState::SEARCH:
             if (!mIsOnGround) {
-                if (mIsFacingRight) { currentAnimFrames = &mJumpRightFrames; currentTexture = &mJumpRightSheet; }
-                else { currentAnimFrames = &mJumpLeftFrames; currentTexture = &mJumpLeftSheet; }
+                if (mIsFacingRight) { currentAnimFrames = &sJumpRightFrames; currentTexture = &sJumpRightSheet; }
+                else { currentAnimFrames = &sJumpLeftFrames; currentTexture = &sJumpLeftSheet; }
             }
             else {
-                if (mIsFacingRight) { currentAnimFrames = &mRunRightFrames; currentTexture = &mRunRightSheet; }
-                else { currentAnimFrames = &mRunLeftFrames; currentTexture = &mRunLeftSheet; }
+                if (mIsFacingRight) { currentAnimFrames = &sRunRightFrames; currentTexture = &sRunRightSheet; }
+                else { currentAnimFrames = &sRunLeftFrames; currentTexture = &sRunLeftSheet; }
             }
             break;
 
         case EnemyState::ATTACK:
-            if (mIsFacingRight) { currentAnimFrames = &mAttackRightFrames; currentTexture = &mAttackRightSheet; }
-            else { currentAnimFrames = &mAttackLeftFrames; currentTexture = &mAttackLeftSheet; }
+            if (mIsFacingRight) { currentAnimFrames = &sAttackRightFrames; currentTexture = &sAttackRightSheet; }
+            else { currentAnimFrames = &sAttackLeftFrames; currentTexture = &sAttackLeftSheet; }
             break;
 
         case EnemyState::HURT:
-            if (mIsFacingRight) { currentAnimFrames = &mHurtRightFrames; currentTexture = &mHurtRightSheet; }
-            else { currentAnimFrames = &mHurtLeftFrames; currentTexture = &mHurtLeftSheet; }
+            if (mIsFacingRight) { currentAnimFrames = &sHurtRightFrames; currentTexture = &sHurtRightSheet; }
+            else { currentAnimFrames = &sHurtLeftFrames; currentTexture = &sHurtLeftSheet; }
             break;
 
         default:
-            if (mIsFacingRight) { currentAnimFrames = &mIdleRightFrames; currentTexture = &mIdleRightSheet; }
-            else { currentAnimFrames = &mIdleLeftFrames; currentTexture = &mIdleLeftSheet; }
+            if (mIsFacingRight) { currentAnimFrames = &sIdleRightFrames; currentTexture = &sIdleRightSheet; }
+            else { currentAnimFrames = &sIdleLeftFrames; currentTexture = &sIdleLeftSheet; }
             break;
         }
 
@@ -288,7 +315,16 @@ void Level1Enemy1::updateAnimation(sf::Time deltaTime) {
 
         if (mCurrentFrame >= currentAnimFrames->size()) {
             mCurrentFrame = 0;
-            if (mState == EnemyState::ATTACK || mState == EnemyState::HURT) {
+            
+            if (mState == EnemyState::HURT) {
+                if (mHealth <= 0) {
+                    mState = EnemyState::DEAD; // Die after hurt animation
+                } else {
+                    mState = EnemyState::PATROL;
+                    mAttackCooldown = 1.0f;
+                }
+            }
+            else if (mState == EnemyState::ATTACK) {
                 mState = EnemyState::PATROL;
                 mAttackCooldown = 1.0f;
             }
